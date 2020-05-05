@@ -1,5 +1,6 @@
 import React from 'react'
 import { Typography } from '@material-ui/core'
+
 const AppFooter = () => {
     return (
         <footer style={{ textAlign: 'center' }}>

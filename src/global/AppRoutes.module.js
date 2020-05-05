@@ -1,8 +1,5 @@
-import Homepage from "pages/Homepage"
-import Posts from "pages/Posts"
-import BoilerplateInfo from "pages/BoilerplateInfo"
-import { faHome, faList, faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
-import Users from "pages/Users";
+import { Homepage, SearchUsers, UserProfile, SearchRepos, RepoInfoPage } from "pages";
+import { faHome, faList } from "@fortawesome/free-solid-svg-icons";
 
 const AppRoutes = [
     {
@@ -10,28 +7,41 @@ const AppRoutes = [
         name: 'Homepage',
         path: '/',
         icon: faHome,
-        page: Homepage
+        page: Homepage,
+        inMenu: true
     },
     {
-        id: 'users',
-        name: 'Users',
-        path: '/users',
+        id: 'search-users',
+        name: 'Search Users',
+        path: '/search-users',
         icon: faList,
-        page: Users
+        page: SearchUsers,
+        inMenu: true
     },
     {
-        id: 'posts',
-        name: 'Posts',
-        path: '/posts',
+        id: 'user-profile',
+        name: 'Search Users',
+        path: '/user/:id',
         icon: faList,
-        page: Posts
+        page: UserProfile,
+        inMenu: false
     },
     {
-        id: 'boilerplate-info',
-        name: 'Boilerplate Info',
-        path: '/boilerplate-info',
-        icon: faExclamationCircle,
-        page: BoilerplateInfo
+        id: 'search-repos',
+        name: 'Search Repos',
+        path: '/search-repos',
+        icon: faList,
+        page: SearchRepos,
+        inMenu: true
     },
+    {
+        id: 'repo-info',
+        name: 'Repo Information',
+        path: '/repo/:id',
+        icon: faList,
+        page: RepoInfoPage,
+        inMenu: false
+    },
+
 ]
 export default AppRoutes
